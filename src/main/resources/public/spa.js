@@ -2,7 +2,7 @@ bookDetailsJSON = {
     currentBookId: 0,
     request: function(bookId) {
         $.ajax({
-            url: `http://localhost:8080/addressBook/${bookId}/buddyInfos`
+            url: `/addressBook/${bookId}/buddyInfos`
         }).then(function(data) {
             bookDetailsJSON.currentBookId = bookId;
             bookDetailsJSON.render(data);
@@ -46,7 +46,7 @@ bookDetailsJSON = {
 
         $.ajax(
             {
-                url: `http://localhost:8080/buddy`,
+                url: `/buddy`,
                 dataType: 'json',
                 type: 'post',
                 contentType: 'application/json',
@@ -65,7 +65,7 @@ bookDetailsJSON = {
 bookJSON = {
     request: function() {
         $.ajax({
-            url: "http://localhost:8080/addressBook"
+            url: "/addressBook"
         }).then(function(data) {
             bookJSON.render(data);
         });
@@ -95,7 +95,7 @@ bookJSON = {
     submit: function() {
         $.ajax(
             {
-                url: `http://localhost:8080/addressBook`,
+                url: `/addressBook`,
                 dataType: 'json',
                 type: 'post',
                 contentType: 'application/json',
