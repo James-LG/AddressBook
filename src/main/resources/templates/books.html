@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Buddy Count</th>
+        </tr>
+        <tr th:each="book : ${addressBooks}">
+            <td><a th:href="@{leaf/books/{id}(id=${book.id})}" th:text="${book.id}"></a></td>
+            <td th:text="${book.size()}"></td>
+        </tr>
+    </table>
+    <form action="#" th:action="@{leaf/books}" method="post">
+        <input type="submit" value="Create New Book" />
+    </form>
+</body>
+</html>
